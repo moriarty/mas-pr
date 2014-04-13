@@ -1,0 +1,89 @@
+\documentclass[a4paper, 12 pt, conference, onecolumn]{IEEEconf}
+
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{subfigure, siunitx, url}
+\usepackage{amsmath, amssymb, bbm, nicefrac}
+\usepackage{pifont}
+%\usepackage{tikz}
+%\usetikzlibrary{shapes,arrows,fit,trees,positioning,chains,calc,intersections}
+
+%%% abbreviations to use (guarantee correct spaces between characters)
+\newcommand{\ie}{i.e.\ }
+\newcommand{\Ie}{I.e.\ }
+\newcommand{\eg}{e.g.\ }
+\newcommand{\Eg}{E.g.\ }
+\newcommand{\cf}{cf.}
+
+%%% commands for referencing (guarantee homogeneous writing style)
+\newcommand{\referenceChapter}[1]{Chapter \ref{#1}}
+\newcommand{\referenceSection}[1]{Section \ref{#1}}
+\newcommand{\referenceFigure}[1]{Figure \ref{#1}}
+\newcommand{\referenceEquation}[1]{Eq.~(\ref{#1})}
+\newcommand{\referenceTable}[1]{Table \ref{#1}}
+\newcommand{\referenceListing}[1]{code listing\ref{#1}}
+\newcommand{\referenceAlgorithm}[1]{Algorithm \ref{#1}}
+
+\title{\LARGE \bf
+MAS Probabilistic Reasoning\\* 
+}
+
+
+\author{Alexander Moriarty\\~\\~
+        Probabilistic Reasoning: Assignment 1\\
+        Bonn Rhein-Sieg Uni. of Applied Science\\ 
+        Sankt Augustin, NRW, Germany\\
+        \tt\small alexander@dal.ca
+}
+
+\begin{document}
+
+\maketitle
+
+\section{Question 1}
+\textbf{What is the meaning of the following terms?}
+
+\paragraph{Frame problem}
+is the problem that arises when describing the result of an action in logic and wanting to leave out the irrelevant details that are \emph{obviously} left unaffected by the action. If an object is painted, it has a new colour, if an object is moved, it has a new position. If one paints an object and then move the object, one assumes that the newly painted colour holds, but it was not explicitly said that moving an object does not affect the colour.
+
+\paragraph{Closed world assumption}
+is the assumption that what is not known to be true is false.
+
+\paragraph{Qualification problem}
+is the problem that arises in qualifying all the needed conditions on a problem, in the real world, this is generally infinite or very large; making it impossible to list all the conditions.
+In the classroom example, an agent needed to drive to the airport. In estimating there time required to drive to the airport, one would need to take into account all possible events that could delay the agent. At some point, you must stop the list; e.g. Aliens attacking and destroying all roads to the airport and the agent needing to proceed on foot. (this example, the flight is likely cancelled anyway).
+
+\paragraph{Ramification problem}
+is the problem which arises when trying to represent the indirect results of an action. How to represent or qualify all the events which will occur due to an action.
+
+\setcounter{paragraph}{0}
+\section{Question 2}
+\textbf{What is first order logic and what is propositional logic and what is the difference. Is it possible to describe a robots knowledge in a partially known environment in propositional logic?}
+
+\paragraph{First order logic} is a form of formal logic. It uses formal language to represent abstract thoughts. First order logic syntax uses predicates and quantified variables.
+\paragraph{Propositional logic} is a formal system in which formulas are used to represent propositions.
+\paragraph{First Order vs. Propositional logic} First order logic is an extension of Propositional logic which allows quantifiers; such as $\forall$  and $\exists$.
+
+\section{Question 3}
+\setcounter{paragraph}{0}
+\textbf{What is a conditional probability? What is a prior, what a posterior probability?}
+\paragraph{Conditional probability} is the probability of an event given another event is known to have occurred.
+\paragraph{Prior probability} is the probability prior to taking into account the new data. It represents the uncertainty about a quantity before the new evidence has been taken into account.
+\paragraph{Posterior probability} is the probability after taking into account the new data.
+\newline
+Bayes’ Theorem can be read as: the Posterior Probability A taking into account B has occurred is the Conditional Probability of B occurring given A has occurred, multiplied by the Prior Probability A has occurred, divided by the probability of B occurring.
+P(A|B)= P(B|A)P(A)/P(B)
+
+% \footnote{lkjasdlkj}
+% \input{section_conclusion}
+
+%%% REFERENCES %%%
+% \bibliography{literature_references}
+% \bibliographystyle{splncs}
+%\bibliographystyle{plain}
+
+%%% APPENDIX %%%
+
+\end{document}

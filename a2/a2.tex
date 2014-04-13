@@ -1,0 +1,173 @@
+\documentclass[a4paper, 12 pt, conference, onecolumn]{IEEEconf}
+
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{subfigure, siunitx, url}
+\usepackage{amsmath, amssymb, bbm, nicefrac}
+\usepackage{pifont}
+%\usepackage{tikz}
+%\usetikzlibrary{shapes,arrows,fit,trees,positioning,chains,calc,intersections}
+
+%%% abbreviations to use (guarantee correct spaces between characters)
+\newcommand{\ie}{i.e.\ }
+\newcommand{\Ie}{I.e.\ }
+\newcommand{\eg}{e.g.\ }
+\newcommand{\Eg}{E.g.\ }
+\newcommand{\cf}{cf.}
+
+%%% commands for referencing (guarantee homogeneous writing style)
+\newcommand{\referenceChapter}[1]{Chapter \ref{#1}}
+\newcommand{\referenceSection}[1]{Section \ref{#1}}
+\newcommand{\referenceFigure}[1]{Figure \ref{#1}}
+\newcommand{\referenceEquation}[1]{Eq.~(\ref{#1})}
+\newcommand{\referenceTable}[1]{Table \ref{#1}}
+\newcommand{\referenceListing}[1]{code listing\ref{#1}}
+\newcommand{\referenceAlgorithm}[1]{Algorithm \ref{#1}}
+
+\title{\LARGE \bf
+MAS Probabilistic Reasoning\\* 
+}
+
+
+\author{Alexander Moriarty\\~\\~
+        Probabilistic Reasoning: Assignment 2\\
+        Bonn Rhein-Sieg Uni. of Applied Science\\ 
+        Sankt Augustin, NRW, Germany\\
+        \tt\small alexander@dal.ca
+}
+
+\begin{document}
+
+\maketitle
+
+\section{Question 1}
+\textbf{13.5 Consider the domain of dealing 5-card poker hands from a standard deck of 52 cards, under the assumption the dealer is fair.}
+\paragraph{How many atomic events are there in the joint probability distribution (i.e., how many 5-card hands are there)?}
+\begin{eqnarray}
+{52 \choose 5} &=& \frac{52!}{5!(52-5)!} \\
+{52 \choose 5} &=& 259860
+\end{eqnarray}
+\paragraph{What is the probability of each atomic event?}
+\begin{eqnarray}
+P(atomic~event) &=& \frac{1}{259860}
+\end{eqnarray}
+\paragraph{What is the probability of being dealt a royal straight flush? Four of a kind?}
+\begin{eqnarray}
+P(royal~flush) &=& 4*P(atomic~event) \\
+P(royal~flush) &=& \frac{4}{259860} \\
+P(royal~flush) &=& 1.53929*10^{-5}
+\end{eqnarray}
+\begin{eqnarray}
+P(4~of~a~kind) &=& \frac{52}{4}*(52-4)*P(atomic~event) \\
+P(4~of~a~kind) &=& \frac{13*48}{259860} \\
+P(4~of~a~kind) &=& \frac{624}{259860} \\
+P(4~of~a~kind) &=& 0.00240129300393
+\end{eqnarray}
+
+\setcounter{paragraph}{0}
+\section{Question 2}
+\textbf{13.6 Give the full joint distribution shown in Figure 13.3, calculate the following}
+
+\paragraph{\textbf{P}(Toothache)} 
+\begin{eqnarray}
+P(Toothache) &=& 0.108 + 0.012 + 0.016 + 0.064\\
+P(Toothache) &=& 0.2
+\end{eqnarray}
+
+\paragraph{\textbf{P}(Cavity)}
+\begin{eqnarray}
+P(Cavity) &=& \langle 0.108 + 0.012 + 0.072 + 0.008, 0.016 + 0.064 + 0.144 + 0.576 \rangle \\
+P(Cavity) &=& \langle 0.2, 0.8 \rangle
+\end{eqnarray}
+
+\paragraph{\textbf{P}(Toothache $\mid$ Cavity)}
+
+\begin{eqnarray}
+P(Toothache \mid Cavity) &=& \langle \frac{0.108+0.012}{0.2}, \frac{0.072+0.008}{0.2} \rangle \\
+P(Toothache \mid Cavity) &=& \langle 0.6, 0.4 \rangle
+\end{eqnarray}
+
+\paragraph{\textbf{P}(Cavity $\mid$ Toothache $\vee$ Catch)}
+\begin{eqnarray}
+P(Toothache \mid Cavity \vee Catch) &=& \langle \frac{0.108+0.012+0.072}{0.416}, \frac{0.016+0.064+0.144}{0.416} \rangle \\
+P(Toothache \mid Cavity \vee Catch) &=& \langle 0.4615, 0.5385 \rangle
+\end{eqnarray}
+
+\section{Question 3}
+\setcounter{paragraph}{0}
+\textbf{13.7 Show that the three forms of independence in Equation (13.8) are equivalent.}
+\paragraph{Conditional probability}
+\begin{eqnarray}
+P(a \mid b) &=& P(a) \\
+P(b \mid a) &=& P(b) \\
+P(a \wedge b) &=& P(a)P(b)
+\end{eqnarray}
+\begin{eqnarray}
+P(a \mid b) &=& \frac{P(a \cap b)}{P(b)} \\
+P(a \mid b) &=& \frac{P(a)P(b)}{P(b)} \\
+P(a \mid b) &=& P(a)
+\end{eqnarray}
+\begin{eqnarray}
+P(b \mid a) &=& \frac{P(b \cap a)}{P(a)} \\
+P(b \mid a) &=& \frac{P(b)P(a)}{P(a)} \\
+P(b \mid a) &=& P(b)
+\end{eqnarray}
+\begin{eqnarray}
+P(a \wedge b) &=& P(a \mid b)P(b) \\
+P(a \wedge b) &=& P(a)P(b)
+\end{eqnarray}
+
+
+
+\section{Question 4}
+\setcounter{paragraph}{0}
+\textbf{13.8 After your yearly checkup the doctor has bad news and good news. The bad news is that you tested positive for a serious disease and that the test is 99\% accurate (i.e., the probability of testing positive when you do have the disease is 0.99, as is the probability of testing negative when you don't have the disease). The good news is that this is a rare disease, striking only 1 in 10,000 people of your age.}
+\paragraph{Why is it good news that the disease is rare?}
+Because testing positive is not that bad when the disease is so rare. The test is going on the precautionary side, favouring false positives. 
+\paragraph{What are the chances that you actually have the disease?}
+\begin{eqnarray}
+Known:\\
+P(T \mid D ) &=& 0.99 \\
+P(\neg T \mid \neg D) &=& 0.99 \\
+P(D) &=& 0.0001
+\end{eqnarray}
+\begin{eqnarray}
+P(D \mid T ) &=& \frac{P(T \mid D ) P(D)}{P(T)} \\
+P(D \mid T ) &=& \frac{P(T \mid D ) P(D)}{P(T \mid D ) P(D)+ P(T \mid \neg D) P(\neg D)} \\
+P(D \mid T ) &=&  \frac{(0.99)(0.0001}{(0.99)(0.0001)+(0.01)(0.9999)} \\
+P(D \mid T ) &=& 0.009804
+\end{eqnarray}
+
+\section{Question 5}
+\setcounter{paragraph}{0}
+\textbf{13.9 It is quite often useful to consider the effect of some specific propositions in the context of some general background evidence that remains fixed, rather than in the complete absence of information. The following questions ask you to prove more general versions of the product rule and Bayes' rule, with respect to some background evidence e:}
+\paragraph{Prove the conditionalized version of the general produce rule}
+
+\begin{eqnarray}
+P(X, Y \mid e) &=& P(X \mid Y, e) P( Y \mid e) \\
+P(X, Y \mid e) &=& \frac{P(X, Y, e)}{P(Y, e)} \frac{P(Y, e)}{P(e)} \\
+P(X, Y \mid e) &=& \frac{P(X, Y, e)}{P(e)} \\
+P(X, Y \mid e) &=& P(X, Y \mid e)
+\end{eqnarray}
+
+\paragraph{Prove the conditionalized version of Bayes Rule}
+\begin{eqnarray}
+P(X, Y \mid e) &=& P(Y \mid X, e)P( X \mid e) \\
+P(X \mid Y, e) P( Y \mid e) &=& P(Y \mid X, e)P( X \mid e) \\
+\frac{P(X \mid Y, e) P( Y \mid e)}{P(Y \mid e)} &=& \frac{P(Y \mid X, e)P( X \mid e)}{P(Y \mid e)} \\
+P(X \mid Y, e) &=& \frac{P( Y \mid X, e)P( X \mid e)}{P(Y \mid e)}
+\end{eqnarray}
+
+%\footnote{this is a foot note}
+% \input{section_conclusion}
+
+%%% REFERENCES %%%
+% \bibliography{literature_references}
+% \bibliographystyle{splncs}
+%\bibliographystyle{plain}
+
+%%% APPENDIX %%%
+
+\end{document}
