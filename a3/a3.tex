@@ -1,0 +1,72 @@
+\documentclass[a4paper, 12 pt, conference, onecolumn]{IEEEconf}
+
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{subfigure, siunitx, url}
+\usepackage{amsmath, amssymb, nicefrac}
+\usepackage{pifont}
+%\usepackage{tikz}
+%\usetikzlibrary{shapes,arrows,fit,trees,positioning,chains,calc,intersections}
+
+%%% abbreviations to use (guarantee correct spaces between characters)
+\newcommand{\ie}{i.e.\ }
+\newcommand{\Ie}{I.e.\ }
+\newcommand{\eg}{e.g.\ }
+\newcommand{\Eg}{E.g.\ }
+\newcommand{\cf}{cf.}
+
+%%% commands for referencing (guarantee homogeneous writing style)
+\newcommand{\referenceChapter}[1]{Chapter \ref{#1}}
+\newcommand{\referenceSection}[1]{Section \ref{#1}}
+\newcommand{\referenceFigure}[1]{Figure \ref{#1}}
+\newcommand{\referenceEquation}[1]{Eq.~(\ref{#1})}
+\newcommand{\referenceTable}[1]{Table \ref{#1}}
+\newcommand{\referenceListing}[1]{code listing\ref{#1}}
+\newcommand{\referenceAlgorithm}[1]{Algorithm \ref{#1}}
+
+\title{\LARGE \bf
+MAS Probabilistic Reasoning\\* 
+}
+
+
+\author{Alexander Moriarty\\~\\~
+        Probabilistic Reasoning: Assignment 3\\
+        Bonn Rhein-Sieg Uni. of Applied Science\\ 
+        Sankt Augustin, NRW, Germany\\
+        \tt\small alexander@dal.ca
+}
+
+\begin{document}
+
+\maketitle
+
+\section{Question 1}
+\textbf{13.10 Show the statement ~\ref{eq:q1-1} is equivalent to either ~\ref{eq:q1-2} or ~\ref{eq:q1-3}.}
+\begin{eqnarray}
+P(A, B \mid C) &=& P(A \mid C) P(B \mid C) \label{eq:q1-1} \\
+P(A \mid B, C) &=& P(A \mid C) \label{eq:q1-2} \\
+P(B \mid A, C) &=& P(B \mid C) \label{eq:q1-3}
+\end{eqnarray}
+\noindent\makebox[\linewidth]{\rule{\linewidth}{0.1pt}} 
+\setcounter{equation}{0}
+\begin{eqnarray}
+P(A, B \mid C) &=& P(A \mid C) P(B \mid C) \\
+\frac{P(A, B, C)}{P(C)} &=& P(A \mid C)\frac{P(B, C)}{P(C)} \\
+\frac{P(A \mid B, C) P(B, C)}{P(C)} &=& P(A \mid C)\frac{P(B, C)}{P(C)} \\
+P(A \mid B, C)\frac{P(B, C)}{P(C)} &=& P(A \mid C)\frac{P(B, C)}{P(C)} \\
+P(A \mid B, C) &=& P(A \mid C)
+\end{eqnarray}
+
+
+\setcounter{paragraph}{0}
+\setcounter{equation}{0}
+\section{Question 2}
+\textbf{13.20 For the Wumpus world in Chap. 13.7 compute the term $\sum\limits_{other}P(other)$ for the various pit configurations shown on p. 485}
+\begin{eqnarray}
+... todo ...
+\end{eqnarray}
+
+
+\end{document}
