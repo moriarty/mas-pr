@@ -1,0 +1,10 @@
+digraph G{
+IcyWeather->Battery
+IcyWeather->StarterMotor
+Battery->Radio
+Battery->Ignition
+StarterMotor->Starts
+Ignition->Starts
+Gas->Starts
+Starts->Moves
+}

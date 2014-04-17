@@ -1,0 +1,7 @@
+digraph G{
+T->FG
+T->G
+FG->G
+G->A
+FA->A
+}
