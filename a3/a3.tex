@@ -60,12 +60,24 @@ P(A \mid B, C) &=& P(A \mid C)
 \end{eqnarray}
 
 
+\newpage
 \setcounter{paragraph}{0}
 \setcounter{equation}{0}
 \section{Question 2}
 \textbf{13.20 For the Wumpus world in Chap. 13.7 compute the term $\sum\limits_{other}P(other)$ for the various pit configurations shown on p. 485}
+
+The various pit configurations do not affect the sum, the wumpus world problem description states "(2) each square other than [1, 1] contains a pit with the probability 0.2" 
+
 \begin{eqnarray}
-... todo ...
+\sum\limits_{other} P(other) &=& ? \\
+other &=& \lbrace(1,4),(2,4),(3,4),(4,4),(2,3),(3,3),(4,3),(3,2),(4,3),(4,1)\rbrace \\
+\sum\limits_{other} P(other) &=& a \sum\limits_{i=1}^{10} P ( P_{other\left[ i \right] } ) \\
+\sum\limits_{other} P(other) &=& a \sum\limits_{i=1}^{10} 0.2  \\
+\sum\limits_{other} P(other) &=& a ( 0.2+0.2+0.2+...+0.2+0.2+0.2 ) \\
+a &=& \frac{1}{\sum\limits_{other} P(other)} \\
+a &=& \frac{1}{2}\\
+\sum\limits_{other} P(other) &=& \frac{1}{2} ( 2 )  \\
+\sum\limits_{other} P(other) &=& 1
 \end{eqnarray}
 
 
