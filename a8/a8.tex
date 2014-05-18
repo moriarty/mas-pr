@@ -1,0 +1,127 @@
+%%% LaTeX Template: Two column assignment for BRSU
+%%% Based on two column article from: http://www.howtotex.com/
+%%% Preamble
+\documentclass[	DIV=calc,%
+				paper=a4,%
+				fontsize=11pt,%
+				twocolumn]{article}	 % KOMA-article class
+
+\usepackage{lipsum}	% Package to create dummy text
+\usepackage{blindtext}
+\usepackage[english]{babel}	                          % English language/hyphenation
+\usepackage[protrusion=true,expansion=true]{microtype} % Better typography
+\usepackage{amsmath,amsfonts,amsthm}					 % Math packages
+\usepackage[pdftex]{graphicx}	                          % Enable pdflatex
+\usepackage[svgnames]{xcolor}	                          % Enabling colors by their 'svgnames'
+\usepackage[small,tableposition=top,labelfont=bf,up,textfont=it,up]{caption}
+% Custom captions under/above floats
+\usepackage{epstopdf}	 % Converts .eps to .pdf
+\usepackage{subfig}	     % Subfigures
+\usepackage{booktabs}	 % Nicer tables
+\usepackage{fix-cm}       % Custom fontsizes
+\usepackage{listings}
+\usepackage{soul}
+\usepackage{float}
+\usepackage{subfig}
+\newsavebox{\measurebox}
+
+%%% Custom sectioning (sectsty package)
+\usepackage{sectsty}	 % Custom sectioning (see below)
+\allsectionsfont{%% Change font of al section commands
+	\usefont{OT1}{phv}{b}{n}%% bch-b-n: CharterBT-Bold font
+	}
+
+\sectionfont{%% Change font of \section command
+	\usefont{OT1}{phv}{b}{n}%% bch-b-n: CharterBT-Bold font
+	}
+
+
+\definecolor{brsugrey}{rgb}{0.9, 0.9, 0.9}
+\definecolor{brsublue}{rgb}{0, 0.594, 0.949}
+
+
+\newcommand{\upperRomannumeral}[1]{\uppercase\expandafter{\romannumeral#1}}
+
+%%% Headers and footers
+\usepackage{fancyhdr} % Needed to define custom headers/footers
+	\pagestyle{fancy} % Enabling the custom headers/footers
+\usepackage{lastpage}	
+
+% Header (empty)
+\lhead{}
+\chead{}
+\rhead{}
+% Footer (you may change this to your own needs)
+\lfoot{\footnotesize 
+\texttt{PR} % Set to the course abbreviation 
+\textbullet ~ Moriarty % Set to your name
+\textbullet ~ Assignment \upperRomannumeral{8}} % Set the assignment number
+\cfoot{}
+\rfoot{\footnotesize page \thepage\ of \pageref{LastPage}}	% "Page 1 of 2"
+\renewcommand{\headrulewidth}{0.0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\thesubsection}{\thesection.\alph{subsection}}
+
+%%% Creating an initial of the very first character of the content
+\usepackage{lettrine}
+\newcommand{\initial}[1]{%
+     \lettrine[lines=3,lhang=0.3,nindent=0em]{
+     				\color{brsublue}
+     				{\textsf{#1}}}{}}
+
+%%% Title, author and date metadata
+\usepackage{titling}	% For custom titles
+
+\newcommand{\HorRule}{\color{brsublue}% Creating a horizontal rule
+					 \rule{\linewidth}{1pt}%
+					 \color{black}
+					 }
+
+\pretitle{\vspace{-100pt} \begin{flushleft} \HorRule 
+				\fontsize{25}{25} \usefont{OT1}{phv}{b}{n} \color{gray} \selectfont 
+				}
+\title{Probabilistic Reasoning
+\\ Assignment ~\upperRomannumeral{8}}% Title of your article goes here
+\posttitle{\par\end{flushleft}\vskip 0.5em}
+
+\preauthor{\begin{flushleft}
+\large \lineskip 0.25em \usefont{OT1}{phv}{b}{sl} \color{brsublue}}
+\author{Alexander Moriarty }	% Author name goes here
+\postauthor{\footnotesize \usefont{OT1}{phv}{m}{sl} \color{Black} 
+BRS University of Applied Sciences % Institution of author
+\\email: alexander@dal.ca ~github: @moriarty
+\par\end{flushleft}\HorRule}
+
+\date{\today} 
+\onecolumn
+%%% Begin document
+\begin{document}
+\maketitle
+\thispagestyle{fancy} % Enabling the custom headers/footers for the first page 
+
+%\setcounter{section}{5}
+
+\section{Particle Filter}
+%\paragraph{Consider the network for car diagnosis shown in Figure 14.18. }
+%\subsection{}
+%\paragraph{Extend the network with the Boolean variables \emph{IcyWeather} and %\emph{StarterMotor}.}
+%~\\
+\begin{figure}[h]
+  \centering
+  \caption{Number of Particles vs. Error}
+  \includegraphics[width=\textwidth]{./100_trials_for_each_value_of_N}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \caption{Measurement Noise vs. Error}
+  \includegraphics[width=\textwidth]{./100_trials_for_each_value_of_xR}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \caption{Measurement Noise vs. Error}
+  \includegraphics[width=\textwidth]{./100_trials_for_each_new_value_of_xR}
+\end{figure}
+
+\end{document}
